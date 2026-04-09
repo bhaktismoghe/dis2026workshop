@@ -1,0 +1,232 @@
+:root {
+    --bg-color: #F9F7F2;
+    --text-color: #5D4037;
+    --accent-color: #C68B8B;
+    --secondary-color: #81968F;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+}
+
+h1, h2, h3, blockquote {
+    font-family: 'Playfair Display', serif;
+}
+
+main {
+    max-width: 900px; /* Narrower for better single-column readability */
+    margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+    padding: 6rem 10% 1rem;
+    text-align: center;
+}
+
+.top-tag {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--accent-color);
+    margin-bottom: 4rem;
+}
+
+.quote-container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    border-top: 1px solid var(--accent-color);
+    border-bottom: 1px solid var(--accent-color);
+}
+
+blockquote {
+    font-size: 1.4rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+/* Content Blocks */
+.content-block {
+    padding: 6rem 10%;
+}
+
+.alt-bg {
+    background-color: rgba(129, 150, 143, 0.08);
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+    color: var(--text-color);
+}
+
+.participation-text p {
+    margin-bottom: 1.5rem;
+}
+
+.styled-list {
+    list-style: none;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+}
+
+.styled-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.styled-list li::before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Improved Social & CTA Area */
+.cta-area {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.social-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.social-wrapper span {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    opacity: 0.7;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.icon-btn {
+    background: var(--white);
+    border: 1px solid rgba(0,0,0,0.1);
+    color: var(--text-color);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Single Column Organizers */
+.organizer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.bio-card {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.bio-img {
+    width: 120px;
+    height: 120px;
+    background: #e0ddd7;
+    flex-shrink: 0;
+    border-radius: 4px;
+}
+
+/* Table & Schedule */
+.dates-table {
+    width: 100%;
+}
+
+.dates-table td {
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.btn {
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 1.2rem 3rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 40px; /* Pill shape */
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #6a7c76;
+}
+
+.schedule-item {
+    display: flex;
+    padding: 1.5rem;
+    background: var(--white);
+    border-left: 4px solid var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.schedule-item strong {
+    min-width: 120px;
+}
+
+footer {
+    text-align: center;
+    padding: 6rem 0;
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+@media (max-width: 650px) {
+    .bio-card { flex-direction: column; text-align: center; align-items: center; }
+    h1 { font-size: 2.2rem; }
+    .hero { padding-top: 4rem; }
+    .schedule-item { flex-direction: column; gap: 0.5rem; }
+}
