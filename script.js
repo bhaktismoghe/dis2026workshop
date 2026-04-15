@@ -1,13 +1,19 @@
-// Social Sharing Configuration
-const workshopUrl = window.location.href;
-const workshopTitle = "Join the DIS 2026 Workshop: Embodied Vulnerability in Design Research";
+window.addEventListener('scroll', () => {
+    let current = "";
+    const sections = document.querySelectorAll("section[id]");
+    const navItems = document.querySelectorAll(".nav-item");
 
-function shareOnTwitter() {
-    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(workshopTitle)}&url=${encodeURIComponent(workshopUrl)}`;
-    window.open(twitterUrl, '_blank');
-}
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 150) {
+            current = section.getAttribute("id");
+        }
+    });
 
-function shareOnLinkedIn() {
-    const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(workshopUrl)}`;
-    window.open(linkedinUrl, '_blank');
-}
+    navItems.forEach((item) => {
+        item.classList.remove("active");
+        if (item.getAttribute("href").includes(current)) {
+            item.classList.add("active");
+        }
+    });
+});
