@@ -17,3 +17,16 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+const toggleBtn = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggleBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+document.querySelectorAll(".nav-item").forEach(item => {
+    item.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
+});
