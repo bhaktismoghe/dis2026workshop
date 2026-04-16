@@ -34,7 +34,7 @@ h3 {
 }
 
 main {
-    max-width: 900px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -93,9 +93,80 @@ html {
     border-bottom: 2px solid var(--accent-color);
 }
 
+@media (max-width: 768px) {
+    .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .header-container {
+        flex-direction: column;    
+        gap: 1rem;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+}
+
 /* --- Hero & Quotes --- */
-.hero { padding: 4rem 10% 2rem; text-align: center; }
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+    padding: 4rem 0;
+    /* Ensure hero doesn't inherit any centering from parents */
+    left: 0; 
+}
+
+.hero-inner {
+    z-index: 10;
+    max-width: 800px; /* This keeps your text centered and readable */
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-side-img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 850px; 
+    max-width: 22vw;
+    height: auto;
+    z-index: 1;
+    opacity: 0.9;
+}
+
+.img-left { 
+    left: 50px; 
+}
+
+.img-right { 
+    right: 50px; 
+}
+
+@media (max-width: 1024px) {
+    .hero-side-img {
+        display: none; /* Completely removes images on tablets and phones */
+    }
+    
+    .hero {
+        padding: 4rem 10%; /* Re-adds padding on mobile for text readability */
+    }
+}
+
 h1 { font-size: 3.2rem; line-height: 1.2; margin-bottom: 1rem; }
+
 .subtitle { font-size: 1.5rem; font-style: italic; color: var(--accent-color); margin-bottom: 3rem; }
 
 .quote-container {
@@ -123,10 +194,14 @@ blockquote { font-size: 1.45rem; font-style: italic; line-height: 1.6; margin-bo
 cite { display: block; font-size: 0.9rem; letter-spacing: 0.15rem; color: var(--accent-color); font-weight: 600; font-style: normal; text-transform: uppercase; }
 
 /* --- Sections --- */
-.content-block { padding: 5rem 10%; }
+.content-block { 
+    padding: 5rem 10%; 
+    max-width: 900px; /* Re-apply the limit here */
+    margin: 0 auto;   /* Center it */
+}
+
 .alt-bg { background-color: rgba(129, 150, 143, 0.07); border-radius: 8px; }
 
-/* --- FIXED CTA AREA --- */
 .cta-area {
     margin: 4.5rem 0;
     display: flex;
