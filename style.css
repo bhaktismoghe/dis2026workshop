@@ -235,67 +235,20 @@ cite { display: block; font-size: 0.9rem; letter-spacing: 0.15rem; color: var(--
     width: 100%;
 }
 
-.deadline-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--white);
-    border: 1px solid rgba(0,0,0,0.05);
-    padding: 2rem 2.5rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-}
-
-/* Content */
-.deadline-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-/* Label */
-.deadline-label {
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 0.12rem;
-    color: var(--secondary-color);
-    font-weight: 700;
-    margin-bottom: 0.4rem;
-}
-
-/* Date */
-.deadline-date {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--text-color);
-    line-height: 1.2;
-}
-
-/* Time */
-.deadline-time {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-color);
-    opacity: 0.85;
-    margin-top: 0.2rem;
-}
-
 .btn-wrapper { width: 100%; text-align: center; }
 
 .btn {
     display: inline-block; /* Prevents text wrap overlap */
     background: var(--secondary-color);
     color: var(--white);
-    padding: 1.2rem 3.5rem;
+    padding: 1.2rem 3rem;
     text-decoration: none;
     font-weight: 600;
     border-radius: 50px;
     transition: transform 0.2s, opacity 0.3s;
 }
 
-.btn:hover { transform: translateY(-2px); opacity: 0.95; }
+.btn:hover { transform: translateY(-4px); opacity: 0.95; }
 
 .contact-text { margin-top: 0.5rem; font-size: 0.9rem; }
 .contact-text a { color: var(--text-color); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--accent-color); }
@@ -317,8 +270,21 @@ cite { display: block; font-size: 0.9rem; letter-spacing: 0.15rem; color: var(--
 }
 .bio-text p { display: inline; }
 
-.dates-table { width: 100%; border-collapse: collapse; }
-.dates-table td { padding: 1.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+.dates-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+.dates-table td { 
+    padding: 1.5rem 0; 
+    border-bottom: 1px solid rgba(0,0,0,0.06); 
+    vertical-align: top;
+}
+
+.dates-table td:first-child {
+    font-weight: 600;
+    width: 40%;
+}
 
 .schedule-item { display: flex; padding: 1.5rem; background: var(--white); border-left: 4px solid var(--secondary-color); margin-bottom: 1rem; gap: 1.5rem; border-radius: 0 8px 8px 0; }
 .schedule-item strong { min-width: 110px; }
